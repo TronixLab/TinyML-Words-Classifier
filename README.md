@@ -28,7 +28,7 @@ In able to do this, you will need to do the following steps. For more details cl
    
       ![alt tag](https://files.readme.io/3677848-Screenshot_2020-07-16_at_13.34.56.png) 
       
-      The other method is uploading via command prompt. This is my recommended method for uploading a large number of datasets. If you want to use **Yes** dataset, run the command
+      The other method is uploading via command prompt. This method is reliable and faster of uploading a large number of datasets. If you want to use **Yes** dataset, run the command
       ```
                       edge-impulse-uploader --label Yes C:\Users\to\a\file\*.wav
       ```
