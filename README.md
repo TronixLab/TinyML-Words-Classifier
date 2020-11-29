@@ -93,6 +93,6 @@ In able to do this, you will need to do the following steps. For more details cl
       ```
       ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/runBinFirmware.jpg?raw=true)      
       
-      **Viola! You have now deploy a embedded machine learning on Arduino.**
+      **Viola! You have now deploy an embedded machine learning on Arduino.**
     
       
