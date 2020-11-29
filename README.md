@@ -37,7 +37,7 @@ In able to do this, you will need to do the following steps. For more details cl
 
       Upload your desired keywords from Google AI dataset, and noise dataset from Edge Impulse prebuilt dataset. Approximately, about thousand words or data is enough for each dataset.
       
-5. With the data set in place you can design an impulse. In the Studio, go to the **Create impulse tab**, add a Time series data, an Audio (MFCC) and a Neural Network (Keras) block. Leave the window size to 1 second (as that's the length of our audio samples in the dataset) and click Save Impulse. For more details, visit the [**Responsing to your voice**](https://docs.edgeimpulse.com/docs/responding-to-your-voice) tutorial.
+5. With the data set in place you can design an impulse. In the Studio, go to the **Create impulse tab**, add a Time series data, an Audio (MFCC) and a Neural Network (Keras) block. Leave the window size to 1 second (as that's the length of our audio samples in the dataset) and click Save Impulse. For more details, visit the [**Responding to your voice**](https://docs.edgeimpulse.com/docs/responding-to-your-voice) tutorial.
    
       ![alt tag](https://files.readme.io/6556142-Screenshot_2020-11-19_at_22.39.24.png)
 
@@ -65,5 +65,33 @@ In able to do this, you will need to do the following steps. For more details cl
 
       ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/OptimizeFirmware.jpg?raw=true)
       
-   -  Build your model either in Arduino Library or in binary file. If you were using Arduino Library, add it to your Arduino IDE library, and upload code in the example *nano_ble33_sense_microphone_continuous* to your Arduino device.
+   -  Build your model either in Arduino Library or in binary file and extract it. If you were using Arduino Library, add it to your Arduino IDE library, Go to **File** > **Examples** and find your Edge Impulse project Arduino Library, and choose *arduino_nano_33_ble_sense_accelerometer_continues*. Upload the Arduino sketch, then open your IDE serial monitor.
    
+      ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/ArduinoOut.jpg?raw=true)
+      
+      You may encounter compilinng error in your Arduino IDE. In my case, I encountered an error that shows
+      ```
+      fork/exec C:\Users\MYUSER\AppData\Local\Arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4/bin/arm-none-eabi-g++.exe: The filename or extension is too long.
+      ```
+      To fix this issue, download the [platform.local.txt](http://cdn.edgeimpulse.com/drivers/platform.local.txt) and copy this file under the Arduino mbed directory (e.g.)
+      ```
+      C:\Users\MYUSER\AppData\Local\Arduino15\packages\arduino\hardware\mbed\1.1.4\
+      ```
+      
+   -  Uploading firmware in bin file format is much faster than using Arduino IDE for actual testing. To do this, if your are using Windows 10 OS, first double press on the reset push button quickly to launch the bootloader. The on-board LED should start pulsating to indicate this.
+   
+      ![alt tag](https://files.readme.io/b302301-out.gif)
+   
+      Your Arduino is ready to flash the firmware. To flash the Arduino binary file firmware, run the *flash_windows.bat* file. 
+      
+      ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/fashBinFirmware.jpg?raw=true)      
+      
+      To run the the firmware, run the command
+      ```
+                      edge-impulse-run-impulse --continuous
+      ```
+      ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/runBinFirmware.jpg?raw=true)      
+      
+      **Viola! You have now deploy a embedded machine learning on Arduino.**
+    
+      
