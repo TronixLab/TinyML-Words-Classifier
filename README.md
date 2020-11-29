@@ -13,16 +13,4 @@ In able to do this, you will need to do the following steps. For more details cl
       ```
                       npm install -g edge-impulse-cli
       ```
-3.  Setup your Arduino device in Edge Impulse. 
-    - Connect your Arduino Nano 33 BLE Sense on your computer then double press on the *reset push button* quickly to launch the bootloader. The on-board LED should start          pulsating to indicate this.
-    
-      ![alt tag](https://files.readme.io/b302301-out.gif) 
-    
-    - Download the latest [Edge Impulse firmware](https://cdn.edgeimpulse.com/firmware/arduino-nano-33-ble-sense.zip), and unzip the file. Open the flash script according to your operating system. For Windows 10, run the *flash_windows.bat* to flash the firmware to your Arduino device.
-    - Then open a command prompt or terminal and run
-      ```
-                      edge-impulse-daemon
-      ```
-    - Then input your Edge Impulse account credentials. To veryfy to Arduino Device is connected, in your [edge impulse project](https://docs.edgeimpulse.com/docs/arduino-nano-33-ble-sense), click **Devices** tab. The device will be listed here.
-    
-    ![alt tag](https://files.readme.io/b5b9f02-arduino03.png) 
+3. Prepapre youe datasets, download the [prebuilt dataset](https://docs.edgeimpulse.com/docs/keyword-spotting) Keyword spotting from Edge Impulse documentation, and [Speech Commands Dataset](http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz) from Google AI.
