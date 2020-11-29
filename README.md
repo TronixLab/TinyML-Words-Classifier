@@ -49,8 +49,21 @@ In able to do this, you will need to do the following steps. For more details cl
    -  Click on **NN Classifier** under **Impulse design** tab.
    -  Before you begin training, you can configure the number of training cycles (epochs), learning rate, and confidence rating. Increasing the number of epochs may increase the accuracy, too many epochs may cause your model to over-fit the training data (the model does not learn the data, it memorizes the data). You have to find the accuracy of validation data for each epoch or maybe iteration to investigate whether it over-fits or not. You should stop training when the error rate of validation data is minimum.
    -  In the **Neural network architecture**, you can play around with the number of neurons and network, it may increase the accuracy of the model but doesn't guarantee it. The more complex the model, it takes more time to learn, and more device memory to be needed.
-   -  Train your neural network model, after training, the the performance of your ML model.
+   -  Train your neural network model, after training, look for the performance of your ML model.
    
       ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/trainingResults.jpg?raw=true)
 
-8. 
+8. Test your ML model
+   -  Go to your **Dashboard**, at the lower section, click **Rebalance dataset** and type *rebalace dataset* to confirm. Now to have a dataset for testing purpose.
+   -  Now to go **Model testing**, select all the datasets and classify it. After running it, you may see your model performance.
+
+      ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/testResults.jpg?raw=true)
+   
+   -  You cal also test it in the **Live classification**. You need to connect your Arduino device first to Edge Impulse API. Click [this](https://docs.edgeimpulse.com/docs/arduino-nano-33-ble-sense) for more info.
+9. Deploy the ML model in your Arduino device. This will export the impulse, and build a binary or Arduino Library without dependencies that will run on your development board in a single step.
+   -  To export your model, click on **Deployment** tab. Optimize the model can increase on-device performance but may reduce accuracy.
+
+      ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/OptimizeFirmware.jpg?raw=true)
+      
+   -  Build your model either in Arduino Library or in binary file. If you were using Arduino Library, add it to your Arduino IDE library, and upload code in the example *nano_ble33_sense_microphone_continuous* to your Arduino device.
+   
