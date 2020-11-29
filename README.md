@@ -28,9 +28,20 @@ In able to do this, you will need to do the following steps. For more details cl
    
       ![alt tag](https://files.readme.io/3677848-Screenshot_2020-07-16_at_13.34.56.png) 
       
-      The other method is uploading via command prompt. This method is reliable and faster of uploading a large number of datasets. If you want to use **Yes** dataset, run the command
+      The other method is uploading via command prompt. This method is reliable and faster of uploading a large number of datasets. If you want to use **Off** dataset, run the command
       ```
-                      edge-impulse-uploader --label Yes C:\Users\to\a\file\*.wav
+                      edge-impulse-uploader --label Off C:\Users\Path\to\a\file\Off\*.wav
       ```
      
+     ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/UploadingFilesCMD.jpg?raw=true)
+
+5. With the data set in place you can design an impulse. In the Studio, go to the **Create impulse tab**, add a Time series data, an Audio (MFCC) and a Neural Network (Keras) block. Leave the window size to 1 second (as that's the length of our audio samples in the dataset) and click Save Impulse. For more details, visit the [**Responsing to your voice**](https://docs.edgeimpulse.com/docs/responding-to-your-voice) tutorial.
+   
+      ![alt tag](https://files.readme.io/6556142-Screenshot_2020-11-19_at_22.39.24.png)
+
+6. Before training your neural network model, we'll need to generate Mel Frequency Cepstral Coefficient (MFCC) blocks to extract the audio features and classify it. To do this, click the *Generate features* button at the top of the page, then click the **green Generate features** button. This will take a minute or so to complete. Afterwards you will see a 3D representation showing your complete dataset, with each data-item color-coded to its respective label. This is a usefull tool to find anomalies (an item that's in a wrong cluster), and to validate whether your dataset is suitable for ML (it should separate nicely).
+
+      ![alt tag](https://github.com/TronixLab/TinyML-Words-Classifier/blob/main/results/DataClassificationGraph.jpg?raw=true)
+      
+      
       
