@@ -13,15 +13,24 @@ In able to do this, you will need to do the following steps. For more details cl
       ```
                       npm install -g edge-impulse-cli
       ```
-3. Prepapre youe datasets, download the [prebuilt dataset](https://docs.edgeimpulse.com/docs/keyword-spotting) Keyword spotting from Edge Impulse documentation, and [Speech Commands Dataset](http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz) from Google AI. Extract the files on the folder.
+3. Prepapre your datasets, download the [prebuilt dataset](https://docs.edgeimpulse.com/docs/keyword-spotting) Keyword spotting from Edge Impulse documentation, and [Speech Commands Dataset](http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz) from Google AI. Extract the files on the folder.
 
 4. Upload your single word voice or speech datasets to your Edge Impulse project. You are free to choose which words are going to use.
    -  Connect your local computer to Edge Impulse studio. Open your command prompt, and run
       ```
                       edge-impulse-daemon
       ```
-      Input your account credentials and select a project, if have a prevous project, to switch the connection to your new project, clear the Edge Impulse daemon configuration the running the command
+      Input your account credentials and select a project, if you have a prevous project, switch the connection to your new project, clear the Edge Impulse daemon configuration the running the command
       ```
                       edge-impulse-daemon --clean
       ```
-
+   -  Upload your existing datasets to your Edge Impulse project. There are two methods to [upload](https://docs.edgeimpulse.com/docs/cli-uploader) your datasets, first go to the **Data acquisition** and click the *upload* icon. You can select files in *.wav* file format, the *category* and the *label* directly from Edge Impulse Studio.
+   
+      ![alt tag](https://files.readme.io/3677848-Screenshot_2020-07-16_at_13.34.56.png) 
+      
+      The other method is uploading via command prompt. This is my recommended method for uploading a large number of datasets. If you want to use **Yes** dataset, run the command
+      ```
+                      edge-impulse-uploader --label Yes C:\Users\to\a\file\*.wav
+      ```
+     
+      
